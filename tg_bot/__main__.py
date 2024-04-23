@@ -27,7 +27,7 @@ from tg_bot import (
     TOKEN,
     WEBHOOK,
     OWNER_ID,
-    CERT_PATH,
+    cert,
     PORT,
     URL,
     log,
@@ -705,6 +705,7 @@ def migrate_chats(update: Update, context: CallbackContext):
 
     log.info("Successfully migrated!")
     raise DispatcherHandlerStop
+
 
 
 def main():
