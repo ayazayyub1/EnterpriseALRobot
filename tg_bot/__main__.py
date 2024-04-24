@@ -714,13 +714,14 @@ def main():
     # dispatcher.add_error_handler(error_handler)
 
     if WEBHOOK:
-        LOGGER.info("Using webhooks.")
+        log.info("Using webhooks.")
         updater.start_webhook(listen="0.0.0.0", port=PORT, url_path=TOKEN)
 
         if CERT_PATH:
             updater.bot.set_webhook(url=URL + TOKEN, certificate=open(CERT_PATH, "rb"))
         else:
             updater.bot.set_webhook(url=URL + TOKEN)
+            log.info("successfully runned")
 
 if __name__ == "__main__":
     log.info("[KIGYO] Successfully loaded modules: " + str(ALL_MODULES))
