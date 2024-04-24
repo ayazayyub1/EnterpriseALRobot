@@ -713,13 +713,12 @@ def main():
     dispatcher.add_error_handler(error_callback)
     # dispatcher.add_error_handler(error_handler)
 
-    Try changing
-
-updater.start_webhook(listen="0.0.0.0",
+if WEBHOOK:
+  updater.start_webhook(listen="0.0.0.0",
                       port=int(PORT),
-                      url_path=TOKEN)
-updater.bot.setWebhook('https://api.render.com/deploy/srv-cojtpjmd3nmc73c37q00?key=Opdtxfwxm5s/' + TOKEN)
-
+                      url_path=TOKEN,
+                      webhook_url = 'https://api.render.com/deploy/srv-cojtpjmd3nmc73c37q00?key=Opdtxfwxm5s/' + TOKEN,
+                      force_event_loop=True)
 
 
 if __name__ == "__main__":
