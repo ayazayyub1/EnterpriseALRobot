@@ -4,7 +4,7 @@ Dank-del
 2020-12-29
 """
 
-import ssl
+
 import importlib
 import re
 import threading
@@ -21,7 +21,7 @@ from telegram.ext import (
 )
 from telegram.ext.dispatcher import DispatcherHandlerStop
 from telegram.utils.helpers import escape_markdown
-
+from OpenSSL import SSL
 from tg_bot import (
     KInit,
     dispatcher,
