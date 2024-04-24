@@ -55,7 +55,6 @@ class KigyoINIT:
         self.OWNER_USERNAME: str = self.parser.get('OWNER_USERNAME', None)
         self.APP_ID: str = self.parser.getint("APP_ID")
         self.API_HASH: str = self.parser.get("API_HASH")
-        self.WEBHOOK: bool = self.parser.getboolean('WEBHOOK', False)
         self.URL: str = self.parser.get('URL', None)
         self.pem_data: str = self.parser.get('pem_data', None)
         self.PORT: int = self.parser.getint('PORT', None)
