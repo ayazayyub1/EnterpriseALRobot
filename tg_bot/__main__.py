@@ -713,15 +713,12 @@ def main():
     dispatcher.add_error_handler(error_callback)
     # dispatcher.add_error_handler(error_handler)
 
-    if WEBHOOK:
-        updater.start_webhook(listen="0.0.0.0", port=PORT, url_path=URL, allowed_updates=Update.ALL_TYPES, drop_pending_updates=KInit.DROP_UPDATES)
-        log.info("successfully runned")
-        log.info(f"Kigyo started, Using long polling. | BOT: [@{dispatcher.bot.username}]")
-        KigyoINIT.bot_id = dispatcher.bot.id
-        KigyoINIT.bot_username = dispatcher.bot.username
-        KigyoINIT.bot_name = dispatcher.bot.first_name
-        updater.start_polling(timeout=15, read_latency=4, allowed_updates=Update.ALL_TYPES,
-                              drop_pending_updates=KInit.DROP_UPDATES)
+    Try changing
+
+updater.start_webhook(listen="0.0.0.0",
+                      port=int(PORT),
+                      url_path=TOKEN)
+updater.bot.setWebhook('https://api.render.com/deploy/srv-cojtpjmd3nmc73c37q00?key=Opdtxfwxm5s/' + TOKEN)
 
 
 
