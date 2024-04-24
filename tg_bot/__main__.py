@@ -27,7 +27,7 @@ from tg_bot import (
     TOKEN,
     WEBHOOK,
     OWNER_ID,
-    cert,
+    pem_data,
     PORT,
     URL,
     log,
@@ -706,7 +706,7 @@ def migrate_chats(update: Update, context: CallbackContext):
     log.info("Successfully migrated!")
     raise DispatcherHandlerStop
 
-
+cert = x509.load_pem_x509_certificate(str.encode(pem_data), default_backend())
 
 def main():
     dispatcher.add_error_handler(error_callback)
