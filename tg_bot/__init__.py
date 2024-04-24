@@ -57,7 +57,7 @@ class KigyoINIT:
         self.API_HASH: str = self.parser.get("API_HASH")
         self.WEBHOOK: bool = self.parser.getboolean('WEBHOOK', False)
         self.URL: str = self.parser.get('URL', None)
-        self.CERT_PATH: str = self.parser.get('CERT_PATH', None)
+        self.cert: str = self.parser.get('cert', None)
         self.PORT: int = self.parser.getint('PORT', None)
         self.INFOPIC: bool = self.parser.getboolean('INFOPIC', False)
         self.DEL_CMDS: bool = self.parser.getboolean("DEL_CMDS", False)
@@ -111,7 +111,7 @@ APP_ID = KInit.APP_ID
 API_HASH = KInit.API_HASH
 WEBHOOK = KInit.WEBHOOK
 URL = KInit.URL
-CERT_PATH = KInit.CERT_PATH
+cert = KInit.cert
 PORT = KInit.PORT
 INFOPIC = KInit.INFOPIC
 DEL_CMDS = KInit.DEL_CMDS
