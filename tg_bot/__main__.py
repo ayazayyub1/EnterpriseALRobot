@@ -708,7 +708,6 @@ def migrate_chats(update: Update, context: CallbackContext):
     log.info("Successfully migrated!")
     raise DispatcherHandlerStop
 
-cert = subprocess.check_output(["openssl", "x509", "-text", "-noout", "-in", certificate])
 
 def main():
     dispatcher.add_error_handler(error_callback)
