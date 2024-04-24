@@ -717,8 +717,8 @@ if WEBHOOK:
   updater.start_webhook(listen="0.0.0.0",
                       port=int(PORT),
                       url_path=TOKEN,
-                      webhook_url = 'https://api.render.com/deploy/srv-cojtpjmd3nmc73c37q00?key=Opdtxfwxm5s/' + TOKEN,
-                      force_event_loop=True)
+                      webhook_url = 'https://api.render.com/deploy/srv-cojtpjmd3nmc73c37q00?key=Opdtxfwxm5s/' + TOKEN)
+                      
 
 
 if __name__ == "__main__":
