@@ -714,8 +714,8 @@ def main():
     # dispatcher.add_error_handler(error_handler)
 
     if WEBHOOK:
-        log.info("Using webhooks.")
-        updater.start_webhook(listen="0.0.0.0", port=PORT, url_path=TOKEN, webhook_url=URL+TOKEN)
+        updater.start_webhook(listen="0.0.0.0", port=PORT, url_path=TOKEN, allowed_updates=Update.ALL_TYPES, 
+                            webhook_url=URL+TOKEN, drop_pending_updates=KInit.DROP_UPDATES)
         log.info("successfully runned")
 
 if __name__ == "__main__":
