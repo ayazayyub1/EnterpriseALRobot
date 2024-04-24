@@ -714,9 +714,16 @@ def main():
     # dispatcher.add_error_handler(error_handler)
 
     if WEBHOOK:
-        updater.start_webhook(listen="0.0.0.0", port=PORT, url_path=TOKEN, allowed_updates=Update.ALL_TYPES, drop_pending_updates=KInit.DROP_UPDATES)
-        updater.bot.set_webhook(webhook_url=URL + TOKEN)
+        updater.start_webhook(listen="0.0.0.0", port=PORT, url_path=TOKEN, allowed_updates=Update.ALL_TYPES, drop_pending_updates=KInit.DROP_UPDATES, webhook_url=URL+TOKEN)
         log.info("successfully runned")
+        log.info(f"Kigyo started, Using long polling. | BOT: [@{dispatcher.bot.username}]")
+        KigyoINIT.bot_id = dispatcher.bot.id
+        KigyoINIT.bot_username = dispatcher.bot.username
+        KigyoINIT.bot_name = dispatcher.bot.first_name
+        updater.start_polling(timeout=15, read_latency=4, allowed_updates=Update.ALL_TYPES,
+                              drop_pending_updates=KInit.DROP_UPDATES)
+
+
 
 if __name__ == "__main__":
     log.info("[KIGYO] Successfully loaded modules: " + str(ALL_MODULES))
