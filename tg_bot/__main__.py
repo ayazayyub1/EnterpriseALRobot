@@ -716,12 +716,8 @@ def main():
     if WEBHOOK:
         log.info("Using webhooks.")
         updater.start_webhook(listen="0.0.0.0", port=PORT, url_path=TOKEN, webhook_url=URL+TOKEN)
-
-        if CERT_PATH:
-            updater.bot.set_webhook(url=URL + TOKEN, certificate=open(CERT_PATH, "rb"))
-        else:
-            updater.bot.set_webhook(webhook_url=URL+TOKEN)
-            log.info("successfully runned")
+        updater.bot.set_webhook(webhook_url=URL+TOKEN)
+        log.info("successfully runned")
 
 if __name__ == "__main__":
     log.info("[KIGYO] Successfully loaded modules: " + str(ALL_MODULES))
