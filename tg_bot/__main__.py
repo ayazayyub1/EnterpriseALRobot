@@ -706,7 +706,7 @@ def migrate_chats(update: Update, context: CallbackContext):
     log.info("Successfully migrated!")
     raise DispatcherHandlerStop
 
-cert = ./localhost.pem
+cert = "./localhost.pem"
 
 def main():
     dispatcher.add_error_handler(error_callback)
