@@ -9,6 +9,7 @@ emoji==1.7.0
 feedparser
 future
 gitpython
+cryptography
 gpytranslate
 markdown2
 multicolorcaptcha
