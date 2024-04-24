@@ -56,6 +56,7 @@ class KigyoINIT:
         self.APP_ID: str = self.parser.getint("APP_ID")
         self.API_HASH: str = self.parser.get("API_HASH")
         self.URL: str = self.parser.get('URL', None)
+        self.WEBHOOK: bool = self.parser.getboolean('WEBHOOK', False)
         self.pem_data: str = self.parser.get('pem_data', None)
         self.PORT: int = self.parser.getint('PORT', None)
         self.INFOPIC: bool = self.parser.getboolean('INFOPIC', False)
