@@ -716,7 +716,7 @@ def main():
     if WEBHOOK:
         log.info("Using webhooks.")
         updater.start_webhook(listen="0.0.0.0", port=PORT, url_path=TOKEN, webhook_url=URL+TOKEN)
-        updater.bot.set_webhook(webhook_url=URL+TOKEN)
+        updater.bot.set_webhook(url=URL+TOKEN)
         log.info("successfully runned")
 
 if __name__ == "__main__":
