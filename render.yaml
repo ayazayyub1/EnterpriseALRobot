@@ -1,0 +1,11 @@
+# Exported from Render on 2024-04-24T16:46:25Z
+services:
+- type: web
+  name: EnterpriseALRobot
+  runtime: python
+  repo: https://github.com/ayazayyub1/EnterpriseALRobot
+  plan: free
+  region: oregon
+  buildCommand: pip install -r requirements.txt
+  startCommand: python3 -m tg_bot
+version: "1"
