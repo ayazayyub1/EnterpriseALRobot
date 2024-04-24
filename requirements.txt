@@ -4,7 +4,6 @@ beautifulsoup4
 bleach
 cachetools
 configparser
-currencyconverter
 emoji==1.7.0
 feedparser
 future
