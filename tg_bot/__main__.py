@@ -21,7 +21,8 @@ from telegram.ext import (
 )
 from telegram.ext.dispatcher import DispatcherHandlerStop
 from telegram.utils.helpers import escape_markdown
-from OpenSSL import SSL
+import OpenSSL
+import subprocess
 from tg_bot import (
     KInit,
     dispatcher,
@@ -707,8 +708,7 @@ def migrate_chats(update: Update, context: CallbackContext):
     log.info("Successfully migrated!")
     raise DispatcherHandlerStop
 
-pem_data = SSL.get_server_certificate((hostname, port))
-cert = x509.load_pem_x509_certificate(pem_data, default_backend())
+cert = subprocess.check_output(["openssl", "x509", "-text", "-noout",
 
 def main():
     dispatcher.add_error_handler(error_callback)
