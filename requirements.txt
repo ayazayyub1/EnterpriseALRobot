@@ -25,6 +25,8 @@ speedtest-cli
 sqlalchemy==1.4.11
 # telethon==1.16.4
 ujson
+spamwatch
+SibylSystem
 pycryptodome
 base58
 pytimeparse
