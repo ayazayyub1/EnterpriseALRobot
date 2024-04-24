@@ -9,7 +9,8 @@ import re
 import threading
 from sys import argv
 from typing import Optional
-
+from cryptography import x509
+from cryptography.hazmat.backends import default_backend
 from telegram import Update, ParseMode, InlineKeyboardMarkup, InlineKeyboardButton
 from telegram.error import (TelegramError, Unauthorized, BadRequest,
                             TimedOut, ChatMigrated, NetworkError)
