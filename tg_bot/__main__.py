@@ -712,13 +712,21 @@ def migrate_chats(update: Update, context: CallbackContext):
 def main():
     dispatcher.add_error_handler(error_callback)
     # dispatcher.add_error_handler(error_handler)
-
-if WEBHOOK:
-  updater.start_webhook(listen="0.0.0.0",
-                      port=int(PORT),
-                      url_path=TOKEN,
-                      webhook_url = 'https://api.render.com/deploy/srv-cojtpjmd3nmc73c37q00?key=Opdtxfwxm5s/' + TOKEN)
                       
+if WEBHOOK:
+        log.info("Using webhooks.")
+        updater.start_webhook(listen="0.0.0.0", port=PORT, url_path=TOKEN, allowed_updates=Update.ALL_TYPES, 
+                            webhook_url=URL+TOKEN, drop_pending_updates=KInit.DROP_UPDATES, 
+                            cert=CERT_PATH if CERT_PATH else None)
+        log.info(f"Kigyo started, Using webhooks. | BOT: [@{dispatcher.bot.username}]")
+
+    else:
+        log.info(f"Kigyo started, Using long polling. | BOT: [@{dispatcher.bot.username}]")
+        KigyoINIT.bot_id = dispatcher.bot.id
+        KigyoINIT.bot_username = dispatcher.bot.username
+        KigyoINIT.bot_name = dispatcher.bot.first_name
+        updater.start_polling(timeout=15, read_latency=4, allowed_updates=Update.ALL_TYPES,
+                              drop_pending_updates=KInit.DROP_UPDATES)
 
 
 if __name__ == "__main__":
