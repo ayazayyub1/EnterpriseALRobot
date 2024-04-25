@@ -1,4 +1,4 @@
-docker run my-container:latest --expose 80
+
 FROM python:3.8.5-slim-buster
 
 ENV PIP_NO_CACHE_DIR 1
@@ -78,3 +78,5 @@ RUN pip3 install -U -r requirements.txt
 
 # Starting Worker
 CMD ["python3","-m","tg_bot"]
+
+EXPOSE 8080
