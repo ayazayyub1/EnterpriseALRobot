@@ -28,7 +28,7 @@ from tg_bot import (
     dispatcher,
     updater,
     TOKEN,
-    NOT_WEBHOOK
+    NOT_WEBHOOK,
     WEBHOOK,
     OWNER_ID,
     PORT,
