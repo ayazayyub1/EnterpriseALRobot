@@ -64,7 +64,7 @@ RUN apt update && apt upgrade -y && \
 RUN pip3 install --upgrade pip setuptools
 
 # Copy Python Requirements to /root/SaitamaRobot
-RUN git clone -b shiken https://github.com/ayazayyub1/EnterpriseALRobot /root/tg_bot
+RUN git clone https://github.com/ayazayyub1/EnterpriseALRobot /root/tg_bot
 WORKDIR /root/tg_bot
 
 #Copy config file to /root/SaitamaRobot/SaitamaRobot
