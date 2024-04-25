@@ -717,7 +717,7 @@ if WEBHOOK:
         log.info("Using webhooks.")
         updater.start_webhook(listen="0.0.0.0", port=PORT, url_path=TOKEN, allowed_updates=Update.ALL_TYPES, 
                             webhook_url=URL+TOKEN, drop_pending_updates=KInit.DROP_UPDATES, 
-                            cert=CERT_PATH if CERT_PATH else None)
+                            )
         log.info(f"Kigyo started, Using webhooks. | BOT: [@{dispatcher.bot.username}]")
 
 elif:
