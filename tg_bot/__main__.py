@@ -720,7 +720,7 @@ if WEBHOOK:
                             cert=CERT_PATH if CERT_PATH else None)
         log.info(f"Kigyo started, Using webhooks. | BOT: [@{dispatcher.bot.username}]")
 
-else:
+elif:
      log.info(f"Kigyo started, Using long polling. | BOT: [@{dispatcher.bot.username}]")
      KigyoINIT.bot_id = dispatcher.bot.id
      KigyoINIT.bot_username = dispatcher.bot.username
