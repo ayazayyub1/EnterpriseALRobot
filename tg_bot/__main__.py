@@ -28,6 +28,7 @@ from tg_bot import (
     dispatcher,
     updater,
     TOKEN,
+    NOT_WEBHOOK
     WEBHOOK,
     OWNER_ID,
     PORT,
@@ -720,7 +721,7 @@ if WEBHOOK:
                             )
         log.info(f"Kigyo started, Using webhooks. | BOT: [@{dispatcher.bot.username}]")
 
-elif:
+if NOT_WEBHOOK:
      log.info(f"Kigyo started, Using long polling. | BOT: [@{dispatcher.bot.username}]")
      KigyoINIT.bot_id = dispatcher.bot.id
      KigyoINIT.bot_username = dispatcher.bot.username
