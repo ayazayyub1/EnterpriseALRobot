@@ -57,6 +57,7 @@ class KigyoINIT:
         self.API_HASH: str = self.parser.get("API_HASH")
         self.URL: str = self.parser.get('URL', None)
         self.WEBHOOK: bool = self.parser.getboolean('WEBHOOK', False)
+        self.NOT_WEBHOOK: bool = self.parser.getboolean('NOT_WEBHOOK, True)
         self.pem_data: str = self.parser.get('pem_data', None)
         self.PORT: int = self.parser.getint('PORT', None)
         self.INFOPIC: bool = self.parser.getboolean('INFOPIC', False)
@@ -110,6 +111,7 @@ OWNER_USERNAME = KInit.OWNER_USERNAME
 APP_ID = KInit.APP_ID
 API_HASH = KInit.API_HASH
 WEBHOOK = KInit.WEBHOOK
+NOT_WEBHOOK = KInit.NOT_WEBHOOK
 URL = KInit.URL
 pem_data = KInit.pem_data
 PORT = KInit.PORT
