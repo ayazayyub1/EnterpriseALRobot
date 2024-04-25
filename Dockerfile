@@ -79,4 +79,4 @@ RUN pip3 install -U -r requirements.txt
 # Starting Worker
 CMD ["python3","-m","tg_bot"]
 
-EXPOSE 80
+EXPOSE 80/tcp
